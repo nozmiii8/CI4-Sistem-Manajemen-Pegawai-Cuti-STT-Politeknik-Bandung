@@ -1,0 +1,128 @@
+LAPORAN PRAKTIK KERJA LAPANGAN (PKL)
+SISTEM MANAJEMEN DATA STT POLITEKNIK BANDUNG
+
+================================================================================
+
+1. GAMBARAN UMUM SISTEM
+================================================================================
+- Nama Sistem: Sistem Manajemen Data STT Politeknik Bandung
+- Tujuan: Mengelola data pegawai, jenis cuti, pengajuan cuti, dan sisa cuti pegawai secara terintegrasi
+- Institusi: STT Politeknik Bandung (Sekolah Tinggi Teknologi Terapan Politeknik Bandung)
+- Framework: CodeIgniter 4 (PHP)
+- Database: MySQL
+- Frontend: Bootstrap 5 dengan Bootstrap Icons
+
+2. MODUL UTAMA SISTEM
+================================================================================
+
+a. DASHBOARD
+-----------
+- Halaman utama dengan statistik keseluruhan
+- Menampilkan jumlah data:
+  * Total Pegawai
+  * Jenis Cuti (Master Cuti)
+  * Pengajuan Cuti
+  * Data Sisa Cuti
+- Fitur Aksi Cepat untuk navigasi ke modul utama
+
+b. DATA PEGAWAI
+---------------
+- Fungsi: Mengelola data karyawan/pegawai secara lengkap
+- Data yang dikelola:
+  * NIP (Nomor Induk Pegawai) - Primary Key
+  * Nama lengkap
+  * Alias
+  * Gelar depan
+  * Gelar belakang
+  * Jenis kelamin (L/P)
+  * Tanggal lahir
+  * Nomor HP
+  * Email
+  * Alamat lengkap
+  * RT/RW
+  * Kode Provinsi
+  * Kode Kabupaten/Kota
+  * Kode Kecamatan
+  * Kode Kelurahan
+  * Kode Pos
+- Fitur: CRUD (Create, Read, Update, Delete), pencarian berdasarkan NIP/nama/email, pagination, validasi input lengkap
+
+c. MASTER CUTI
+-------------
+- Fungsi: Mengelola jenis-jenis cuti yang tersedia
+- Contoh jenis cuti: Cuti tahunan, cuti sakit, cuti melahirkan, dll.
+
+d. CUTI PEGAWAI
+---------------
+- Fungsi: Mengelola pengajuan cuti dari pegawai
+- Fitur: Pengajuan cuti baru, approval/rejection, tracking status
+
+e. SISA CUTI
+------------
+- Fungsi: Mengelola sisa cuti pegawai per tahun
+- Data yang dilacak:
+  * Sisa cuti tahun 1
+  * Sisa cuti tahun berjalan
+  * Total sisa cuti
+- Fitur: Update sisa cuti, monitoring penggunaan cuti
+
+f. JATAH CUTI PEGAWAI
+---------------------
+- Fungsi: Mengelola alokasi cuti untuk setiap pegawai
+- Fitur: Pengaturan jatah cuti per jenis dan pegawai
+
+3. TEKNOLOGI DAN ARSITEKTUR
+================================================================================
+- Backend: PHP dengan CodeIgniter 4
+- Frontend: HTML5, CSS3, JavaScript dengan Bootstrap 5
+- Database: MySQL dengan ORM CodeIgniter
+- Arsitektur: MVC (Model-View-Controller)
+- Security: CSRF protection, input validation
+- UI/UX: Responsive design, modern interface dengan icons
+
+4. FITUR UTAMA
+================================================================================
+- Search & Filter: Pencarian data di setiap modul (berdasarkan NIP, nama, email)
+- Pagination: Navigasi data dalam jumlah besar
+- CRUD Operations: Operasi lengkap untuk semua entitas (Create, Read, Update, Delete)
+- Flash Messages: Notifikasi sukses/error untuk feedback user
+- Responsive Design: Kompatibel dengan desktop dan mobile menggunakan Bootstrap 5
+- Form Validation: Validasi input dengan pesan error yang informatif
+- CSRF Protection: Perlindungan keamanan terhadap serangan CSRF
+
+5. STRUKTUR DATABASE
+================================================================================
+- master_pegawai: Data pegawai lengkap (nip, nama, alias, gelar_depan, gelar_belakang, jenis_kelamin, tgl_lahir, no_hp, email, alamat, rt, rw, kd_provinsi, kd_kab, kd_kec, kd_kel, kodepos)
+- master_cuti: Jenis cuti (kode_cuti, keterangan, jatah_per_tahun, menunggu_ct, akumulasi)
+- t_cuti_pegawai: Pengajuan cuti pegawai (id, nip, nama, mulai_cuti, selesai_cuti, lama_cuti, jenis_cuti)
+- t_sisa_cuti: Sisa cuti pegawai (id, nip, sisa_tahun_2, tahun_1, sisa_tahun_1, tahun_berjalan, sisa_tahun_berjalan, sisa_cuti)
+- master_cuti_pegawai: Alokasi cuti per pegawai (nip, jatah_cuti)
+
+6. NAVIGASI DAN USER INTERFACE
+================================================================================
+- Navigation Bar: Menu utama dengan ikon untuk setiap modul
+- Breadcrumb: Navigasi hierarki halaman
+- Card Layout: Tata letak modern dengan shadow dan gradient
+- Table View: Tampilan data dalam format tabel dengan aksi
+- Form Handling: Validasi input dengan pesan error
+- Modal/Dialog: Konfirmasi aksi (hapus data)
+
+7. KEUNGGULAN SISTEM
+================================================================================
+- User-friendly: Interface intuitif dengan Bootstrap
+- Scalable: Arsitektur MVC yang terorganisir
+- Secure: Implementasi security best practices
+- Maintainable: Kode terstruktur dengan CodeIgniter
+- Responsive: Kompatibel berbagai device
+
+8. KESIMPULAN
+================================================================================
+Sistem Manajemen Data STT Politeknik Bandung merupakan aplikasi web yang komprehensif
+untuk mengelola data pegawai dan sistem cuti secara terintegrasi. Dengan menggunakan
+teknologi modern seperti CodeIgniter 4 dan Bootstrap 5, sistem ini menawarkan interface
+yang user-friendly dan fungsionalitas yang lengkap untuk kebutuhan manajemen SDM di
+lingkungan pendidikan tinggi.
+
+================================================================================
+Dibuat untuk Laporan PKL - Analisis Sistem Manajemen Data STT Politeknik Bandung
+================================================================================
